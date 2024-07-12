@@ -7,7 +7,7 @@
                     <div class="card-header pb-0">
                         <div class="d-flex justify-content-between">
                             <div>
-                                <h4 class="">Pendataan Barang</h4>
+                                <h4 class="">Kelola Kategori</h4>
                             </div>
                             {{-- <form action="" method="get">
                                 <div class="pe-md-3 d-flex align-items-center float-end">
@@ -29,8 +29,8 @@
                             </div>
                         @endif
                         <div class="d-flex justify-content-between">
-                            <a href="{{ route('barang.create') }}">
-                                <div class="mt-2 text-white btn bg-gradient-success">Tambah Produk</div>
+                            <a href="{{ route('kategori.create') }}">
+                                <div class="mt-2 text-white btn bg-gradient-success">Tambah Kategori</div>
                             </a>
                         </div>
                     </div>
@@ -40,16 +40,13 @@
                                 <thead>
                                     <tr>
                                         <th class="text-uppercase text-dark text-sm font-weight-bolder">No</th>
-                                        <th class="text-uppercase text-dark text-sm font-weight-bolder">Gambar</th>
-                                        <th class="text-uppercase text-dark text-sm font-weight-bolder">Nama Barang</th>
-                                        <th class="text-uppercase text-dark text-sm font-weight-bolder ">
-                                            Stok</th>
+                                        <th class="text-uppercase text-dark text-sm font-weight-bolder">Nama</th>
                                         <th class="text-uppercase text-dark text-sm font-weight-bolder ">Aksi
                                         </th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($barang as $k)
+                                    @foreach ($kategori as $k)
                                         <tr class="ps-2">
                                             <td>
                                                 <div class="d-flex px-2 py-1">
@@ -57,42 +54,36 @@
                                                         {{ $loop->iteration }}</h6>
                                                 </div>
                                             </td>
-                                            <td>
+                                            {{-- <td>
                                                 <div class="d-flex px-2 py-1">
-                                                    <img src="{{ asset('/storage/images/' . $k->gambar) }}"
+                                                    <img src="{{ asset('/storage/public/images/' . $k->gambar) }}"
                                                         class="card-img"
                                                         style="object-fit: cover;max-width: 100px; max-height: 100px;"
                                                         alt="...">
                                                 </div>
-                                            </td>
+                                            </td> --}}
                                             <td>
                                                 <div class="d-flex px-2 py-1">
                                                     <h6 class="text-secondary text-sm font-weight-bold ps-2">
                                                         {{ $k->nama }}</h6>
                                                 </div>
                                             </td>
-                                            <td>
-                                                <div class="d-flex px-2 py-1">
-                                                    <h6 class="text-secondary text-sm font-weight-bold ps-2">
-                                                        {{ $k->stok }}</h6>
-                                                </div>
-                                            </td>
                                             <td class="align-middle">
-                                                <a href="{{ route('barang.edit', $k->id) }}"
+                                                <a href="{{ route('kategori.edit', $k->id) }}"
                                                     class="btn bg-gradient-warning">Edit</a>
 
-                                                <a href="{{ route('barang.destroy', $k->id) }}"
+                                                <a href="{{ route('kategori.destroy', $k->id) }}"
                                                     onclick="event.preventDefault(); if(confirm('Are you sure you want to delete this product?')) document.getElementById('delete-form-{{ $k->id }}').submit();"
                                                     class="btn bg-gradient-danger">Hapus</a>
 
                                                 <form id="delete-form-{{ $k->id }}"
-                                                    action="{{ route('barang.destroy', $k->id) }}" method="POST"
+                                                    action="{{ route('kategori.destroy', $k->id) }}" method="POST"
                                                     style="display: none;">
                                                     @csrf
                                                     @method('DELETE')
                                                 </form>
 
-                                                <a href="{{ route('barang.show', $k->id) }}"
+                                                <a href="{{ route('kategori.show', $k->id) }}"
                                                     class="btn bg-gradient-info">Detail</a>
                                             </td>
                                         </tr>
@@ -101,7 +92,7 @@
                                 </tbody>
                             </table>
                             <div class="mx-5 my-2">
-                                {{ $barang->withQueryString()->links() }}
+                                {{ $kategori->withQueryString()->links() }}
                             </div>
 
                         </div>

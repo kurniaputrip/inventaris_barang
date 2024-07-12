@@ -7,7 +7,7 @@
                     <div class="card-header pb-0">
                         <div class="d-flex justify-content-between">
                             <div>
-                                <h4 class="">Lokasi Barang</h4>
+                                <h4 class="">Lokasi</h4>
                             </div>
                             {{-- <form action="" method="get">
                                 <div class="pe-md-3 d-flex align-items-center float-end">
@@ -69,21 +69,21 @@
                                                 </div>
                                             </td>
                                             <td class="align-middle">
-                                                <a href="{{ route('barang.edit', $k->id) }}"
+                                                <a href="{{ route('lokasi.edit', $k->id) }}"
                                                     class="btn bg-gradient-warning">Edit</a>
 
-                                                <a href="{{ route('barang.destroy', $k->id) }}"
+                                                <a href="{{ route('lokasi.destroy', $k->id) }}"
                                                     onclick="event.preventDefault(); if(confirm('Are you sure you want to delete this product?')) document.getElementById('delete-form-{{ $k->id }}').submit();"
                                                     class="btn bg-gradient-danger">Hapus</a>
 
                                                 <form id="delete-form-{{ $k->id }}"
-                                                    action="{{ route('barang.destroy', $k->id) }}" method="POST"
+                                                    action="{{ route('lokasi.destroy', $k->id) }}" method="POST"
                                                     style="display: none;">
                                                     @csrf
                                                     @method('DELETE')
                                                 </form>
 
-                                                <a href="{{ route('barang.show', $k->id) }}"
+                                                <a href="{{ route('lokasi.show', $k->id) }}"
                                                     class="btn bg-gradient-info">Detail</a>
                                             </td>
                                         </tr>

@@ -14,7 +14,7 @@
                         <div class="card-body px-0 pt-0 pb-2">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <img src="{{ asset('/storage/public/images/' . $barang->gambar) }}"
+                                    <img src="{{ asset('/storage/images/' . $barang->gambar) }}"
                                         class="ms-3 img-fluid rounded" alt="Gambar Produk">
                                 </div>
                                 <div class="col-md-8">
@@ -26,8 +26,7 @@
                                                 <td>{{ $barang->nama }}</td>
                                             </tr>
                                             <tr>
-                                                <th class="text-uppercase text-dark text-sm font-weight-bolder">Jumlah
-                                                    Pembelian</th>
+                                                <th class="text-uppercase text-dark text-sm font-weight-bolder">Jumlah</th>
                                                 <td>{{ $barang->jumlah }}</td>
                                             </tr>
                                             <tr>
@@ -40,15 +39,32 @@
                                                 </th>
                                                 <td>
                                                     <ul style="list-style-type: none; padding: 0; margin: 0;">
-                                                            @foreach ($barang->kategori as $item)
+                                                        @foreach ($barang->kategori as $item)
                                                             <li>{{ $item->nama }}</li>
-                                                            @endforeach
-                                                        </ul>
-                                                    </td>
+                                                        @endforeach
+                                                    </ul>
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>
-
+                                    <div class="table-responsive pt-2">
+                                        <table class="table table-striped table-bordered table-hover table-sm">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Nama Pelanggan</th>
+                                                    <th scope="col">Total Jumlah Peminjaman</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach ($detail as $k)
+                                                    <tr>
+                                                        <td>{{ $k->user->name }}</td> <!-- Asumsikan kolom 'name' ada di model 'User' -->
+                                                        <td>{{ $k->total_peminjaman }}</td>
+                                                    </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>

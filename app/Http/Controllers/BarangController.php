@@ -7,6 +7,8 @@ use App\Models\Lokasi;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
 use App\Models\KategoriBarang;
+use App\Models\DetailPeminjaman;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 
@@ -78,15 +80,18 @@ class BarangController extends Controller
     }
 
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Barang $barang)
     {
         $barang->load('kategori', 'lokasi');
         $title = 'Kelola Barang';
 
-        return view('pages.Barang.detail-barang', compact('barang', 'title'));
+        // Ambil detail peminjaman, kemudian grup berdasarkan user_id dan hitung jumlahnya
+        $detail = DetailPeminjaman::select('user_id', DB::raw('SUM(jumlah) as total_peminjaman'))
+            ->where('barang_id', $barang->id)
+            ->groupBy('user_id')
+            ->get();
+
+        return view('pages.Barang.detail-barang', compact('barang', 'title', 'detail'));
     }
 
 
