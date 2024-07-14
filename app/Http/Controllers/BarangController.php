@@ -54,7 +54,7 @@ class BarangController extends Controller
         // Proses upload gambar
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
             $newName = $request->nama . '-' . now()->timestamp . '.' . $request->file('image')->getClientOriginalExtension();
-            $request->file('image')->storeAs('public/images', $newName); // simpan gambar ke direktori storage
+            $request->file('image')->move(public_path('images'), $newName); // simpan gambar ke direktori public/images
         }
 
         // Simpan data barang ke dalam tabel 'barangs'

@@ -16,9 +16,9 @@
                                 </div>
                                 <div class="col-4 text-end">
                                     <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                                        <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
+                                        <i class="fas fa-box text-lg opacity-10" aria-hidden="true"></i>
                                     </div>
-                                </div>
+                                </div>                                
                             </div>
                         </div>
                     </div>
@@ -35,9 +35,9 @@
                                 </div>
                                 <div class="col-4 text-end">
                                     <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                                        <i class="ni ni-world text-lg opacity-10" aria-hidden="true"></i>
+                                        <i class="fas fa-tags text-lg opacity-10" aria-hidden="true"></i>
                                     </div>
-                                </div>
+                                </div>                                
                             </div>
                         </div>
                     </div>
@@ -54,9 +54,9 @@
                                 </div>
                                 <div class="col-4 text-end">
                                     <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                                        <i class="ni ni-paper-diploma text-lg opacity-10" aria-hidden="true"></i>
+                                        <i class="fas fa-map-marker-alt text-lg opacity-10" aria-hidden="true"></i>
                                     </div>
-                                </div>
+                                </div>                                
                             </div>
                         </div>
                     </div>
@@ -93,8 +93,8 @@
                             <div class="d-flex flex-column h-100 my-auto mt-5 mx-3">
                                 <p class="mb-1 pt-3 text-bold">STMIK Mardira Indonesia</p>
                                 <h5 class="font-weight-bolder">Inventaris Barang</h5>
-                                <p class="mb-6">Aplikasi manajemen aset yang berfungsi untuk memantau barang yang
-                                    masuk dan keluar.</p>
+                                <p class="mb-6">Aplikasi ini memungkinkan pengguna untuk mengelola stok barang dengan mudah, 
+                                    memantau pergerakan barang, dan menghasilkan laporan inventaris secara real-time.</p>
                             </div>
                         </div>
                         <div class="col-lg-4 ms-auto text-center mt-5 mt-lg-0">
@@ -103,7 +103,7 @@
                                     class="position-absolute h-100 w-50 top-0 d-lg-block d-none" alt="waves">
                                 <div class="position-relative d-flex align-items-center justify-content-center h-100">
                                     <img draggable="false" class="w-100 position-relative z-index-2 pt-4"
-                                        src="../assets/img/illustrations/rocket-white.png" alt="rocket">
+                                        src="../assets/img/illustrations/InventoryManagement.png" alt="rocket">
                                 </div>
                             </div>
                         </div>

@@ -59,7 +59,7 @@
                                             </td>
                                             <td>
                                                 <div class="d-flex px-2 py-1">
-                                                    <img src="{{ asset('/storage/images/' . $k->gambar) }}"
+                                                    <img src="{{ asset('/storage/public/images/' . $k->gambar) }}"
                                                         class="card-img"
                                                         style="object-fit: cover;max-width: 100px; max-height: 100px;"
                                                         alt="...">
